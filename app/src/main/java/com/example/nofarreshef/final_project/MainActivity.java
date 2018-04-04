@@ -1,6 +1,8 @@
 package com.example.nofarreshef.final_project;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
@@ -84,9 +86,9 @@ public class MainActivity extends AppCompatActivity {
                 adapter.setListener(new StudentAdapter.StudentAdapterListener() {
                     @Override
                     public void onItemClicked(int position, View view) {
-                        //Intent i = new Intent(ContactList.this, ShowContact.class);
+                        Intent i = new Intent(MainActivity.this, dailogStudent.class);
                        // i.putExtra("persons",studentL.get(position));
-                        //startActivity(i);
+                        startActivity(i);
                     }
 
                     @Override
