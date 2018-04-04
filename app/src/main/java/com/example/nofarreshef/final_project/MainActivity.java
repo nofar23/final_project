@@ -43,14 +43,15 @@ public class MainActivity extends AppCompatActivity {
         bitmapP=  BitmapFactory.decodeResource(getResources(),R.drawable.cat);
 //just for now- persons array
         Student student1 = new Student();
-        Student student2 = new Student("asaf","232637485","cdivn@oic.com","modiin","bengurion","B","second",bitmapP);
-        Student student3 = new Student("adi","31463778474","dsoin@cadn.com", "holon","ariel", "c","first",bitmapP);
+        Student student2 = new Student("asaf","232637485","cdivn@oic.com","modiin","bengurion", "since","B","second",bitmapP);
+        Student student3 = new Student("adi","31463778474","dsoin@cadn.com", "holon","ariel","since", "c","first",bitmapP);
 
         student1.setName("Nofar");
         student1.setMail("nofar@vij.com");
         student1.setAddress("gadera");
         student1.setPhone("03294776425");
         student1.setColage("hit");
+        student1.setFaculty("since");
         student1.setYearStudy("A");
         student1.setSemester("first");
         student1.setPhoto(bitmapP);
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         try{
-            FileOutputStream fos = openFileOutput("persons.dat", Activity.MODE_PRIVATE);
+            FileOutputStream fos = openFileOutput("student.dat", Activity.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(studentL);
             oos.close();
@@ -77,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
         try{
             //read
-            FileInputStream fis = openFileInput("persons.dat");
+            FileInputStream fis = openFileInput("student.dat");
             ObjectInputStream ois = new ObjectInputStream(fis);
             studentL = (ArrayList<Student>)ois.readObject();
             ois.close();
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onItemClicked(int position, View view) {
                         Intent i = new Intent(MainActivity.this, dailogStudent.class);
-                       // i.putExtra("persons",studentL.get(position));
+                        i.putExtra("persons",studentL.get(position));
                         startActivity(i);
                     }
 
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         try{
-            FileOutputStream fos = openFileOutput("persons.dat", Activity.MODE_PRIVATE);
+            FileOutputStream fos = openFileOutput("student.dat", Activity.MODE_PRIVATE);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(studentL);
             oos.close();

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">final_project</string>
+    <string name="Academic_year">Academic year</string>
+    <string name="more_details">More Details</string>
+    <string name="main_title">StudyBuddy</string>
+    <string name="Courses">Courses</string>
+    <string name="add_student">Add</string>
+    <string name="back">Back</string>
 </resources>

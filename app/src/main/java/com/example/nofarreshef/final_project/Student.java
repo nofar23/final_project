@@ -20,22 +20,26 @@ public class Student implements Serializable{
     private String colage;
     private String yearStudy;
     private String semester;
+    private String faculty;
 
     transient private Bitmap photo;
 
     public Student() {
     }
 
-    public Student(String name, String phone, String mail, String address, String colage, String yearStudy, String semester, Bitmap photo) {
+    public Student(String name, String phone, String mail, String address, String colage,String faculty, String yearStudy, String semester, Bitmap photo) {
         this.name = name;
         this.phone = phone;
         this.mail = mail;
         this.address = address;
         this.colage = colage;
+        this.faculty = faculty;
         this.yearStudy = yearStudy;
         this.semester = semester;
         this.photo = photo;
     }
+
+
 
     public String getName() {
         return name;
@@ -55,6 +59,10 @@ public class Student implements Serializable{
 
     public String getColage() {
         return colage;
+    }
+
+    public String getFaculty() {
+        return faculty;
     }
 
     public String getYearStudy() {
@@ -87,6 +95,10 @@ public class Student implements Serializable{
 
     public void setColage(String colage) {
         this.colage = colage;
+    }
+
+    public void setFaculty(String faculty) {
+        this.faculty = faculty;
     }
 
     public void setYearStudy(String yearStudy) {
